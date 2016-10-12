@@ -31,8 +31,9 @@
                 <?php the_post_thumbnail('large'); ?>
               </div>
             <?php endif; ?>
-            
+
             <?php the_content();  ?>
+            <?php comments_template();  ?>
           </article>
 
         <?php endwhile; else : ?>
