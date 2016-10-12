@@ -1,8 +1,17 @@
 <?php
 
+// these functions add theme support for x
 add_theme_support( 'menus' );
 add_theme_support( 'post-thumbnails' );
 
+// this function sets a custom excerpt length for blog posts
+function wpt_excerpt_length ($length) {
+  return 16;
+}
+add_filter ( 'excerpt_length', wpt_excerpt_length, 999 );
+
+
+// this function makes WP recognise our menu
 function register_theme_menus() {
 
   register_nav_menus(
@@ -14,6 +23,7 @@ function register_theme_menus() {
 }
 add_action( 'init', 'register_theme_menus' );
 
+// this function loads the style (css) files
 function wpt_theme_styles() {
 
   wp_enqueue_style( 'foundation_css', get_template_directory_uri() . '/css/foundation.css' );
@@ -24,6 +34,8 @@ function wpt_theme_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'wpt_theme_styles' );
 
+
+// this function loads the scripts (js)
 function wpt_theme_js() {
 
   wp_enqueue_script( 'modernizr_js', get_template_directory_uri() . '/js/modernizr.js', '', '', false) ;

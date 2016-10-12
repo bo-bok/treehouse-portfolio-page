@@ -8,26 +8,33 @@
       <div class="small-12 medium-7 medium-offset-1 medium-push-4 columns">
         <div class="primary">
 
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+          <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
           <article class="post">
-            <h1><a href="single-post.html">Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.</a></h1>
-            <h2>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</h2>
+            <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+
+            <h2><?php echo strip_tags( get_the_excerpt() ); ?></h2>
             <ul class="post-meta no-bullet">
               <li class="author">
                 <a href="author.html">
-                  <span class="avatar small">
-                    <img src="assets/img/avatar.png"/>
+                  <span class="wpt-avatar small">
+                    <?php echo get_avatar( get_the_author_meta( 'ID' ), 24 ); ?>
+
                   </span>
-                  by Gratt Spore
+                  by <?php the_author_posts_link(); ?>
                 </a>
               </li>
-              <li class="cat">in <a href="">Category 1</a></li>
+              <li class="cat">in <?php the_category( ' ' ); ?></li>
+              <li class="date ">on <?php the_time( 'F j, Y' ); ?></li>
+
             </ul>
+
+            <?php if (get_the_post_thumbnail() ) :?>
+
             <div class="img-container">
-              <img src="assets/img/temp/item-06.png" alt="">
-              <p>Photo by Gratt Spore</p>
+              <?php the_post_thumbnail('large'); ?>
             </div>
+          <?php endif; ?>
           </article>
 
         <?php endwhile; else : ?>
