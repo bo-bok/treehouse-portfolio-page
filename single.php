@@ -56,5 +56,3 @@
 
 
 <?php get_footer(); ?>
-
-<!-- add blog code -->
