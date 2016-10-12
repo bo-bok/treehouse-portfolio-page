@@ -10,11 +10,8 @@
         <h1><?php the_title(); ?></h1>
         <p><?php the_content(); ?></p>
 
-      <?php endwhile; else : ?>
-
-        <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-
-      <?php endif; ?>
+        <p>test </p>
+      <?php endwhile; endif; ?>
 
     </div>
   </div>
