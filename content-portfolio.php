@@ -1,7 +1,11 @@
 <?php
 
+  $num_posts = (is_front_page() ) ? 4 : -1;
+  // if the page is front page, display 4 posts. Else display all.
+
   $args = array(
-    'post_type' => 'portfolio_1'
+    'post_type' => 'portfolio_1',
+    'posts_per_page' => $num_posts
   );
   $query = new WP_Query( $args );
 
