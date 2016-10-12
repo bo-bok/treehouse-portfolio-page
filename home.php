@@ -9,9 +9,27 @@
         <div class="primary">
 
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-          <h1><?php the_title(); ?></h1>
-          <hr />
-          <p><?php the_content(); ?></p>
+
+          <article class="post">
+            <h1><a href="single-post.html">Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.</a></h1>
+            <h2>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</h2>
+            <ul class="post-meta no-bullet">
+              <li class="author">
+                <a href="author.html">
+                  <span class="avatar small">
+                    <img src="assets/img/avatar.png"/>
+                  </span>
+                  by Gratt Spore
+                </a>
+              </li>
+              <li class="cat">in <a href="">Category 1</a></li>
+            </ul>
+            <div class="img-container">
+              <img src="assets/img/temp/item-06.png" alt="">
+              <p>Photo by Gratt Spore</p>
+            </div>
+          </article>
+
         <?php endwhile; else : ?>
         	<p><?php _e( 'Sorry, no pages found.' ); ?></p>
         <?php endif; ?>
