@@ -370,6 +370,21 @@ nav .sub-menu a:hover {
   background: #ed5a5a;
 }
 
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .footer-clear {
   display: block;
   height: 60px;

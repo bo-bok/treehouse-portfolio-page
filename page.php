@@ -9,7 +9,7 @@
         <hr />
         <p><?php the_content(); ?></p>
       <?php endwhile; else : ?>
-      	<p><?php _e( 'Sorry, no pages found.' ); ?></p>
+        <p><?php _e( 'Sorry, no page found.', 'treehouse-portfolio' ); ?></p>
       <?php endif; ?>
 
     </div>

@@ -37,7 +37,7 @@
           </article>
 
         <?php endwhile; else : ?>
-        	<p><?php _e( 'Sorry, no pages found.' ); ?></p>
+        	<p><?php _e( 'Sorry, no pages found.', 'treehouse-portfolio' ); ?></p>
         <?php endif; ?>
 
         </div>
@@ -45,7 +45,7 @@
 
       <?php get_sidebar(); ?>
       <!--  calls sidebar.php -->
-      
+
     </div>
   </div>
 </section>
